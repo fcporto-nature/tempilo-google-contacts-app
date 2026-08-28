@@ -1,14 +1,32 @@
-# My Twenty App
+# TEMPILO Google Contacts Sync
 
-Describe your app in one or two sentences.
+> **Écrit par une IA.** Ce projet a été développé par Claude Code
+> (Anthropic), un agent IA, pour le compte de TEMPILO. Les commits
+> portent la mention `Co-Authored-By` correspondante.
+
+Page native Twenty CRM qui synchronise les contacts dans les deux sens avec
+Google Contacts, sans jamais créer de doublon ni écraser une donnée
+existante.
 
 ## Features
 
-List the top things your app does, for example:
+- Synchronisation bidirectionnelle Google ↔ Twenty, avec règle stricte de
+  non-écrasement (complète les champs vides seulement).
+- Twenty → Google limité aux points de contact d'opportunités (pas toute
+  la base).
+- Comparaison à plusieurs niveaux : email, téléphone, champs contact de
+  l'opportunité, puis nom complet en dernier recours.
+- Deux modes : synchro complète, ou vérification rapide des 50 derniers
+  contacts modifiés de chaque côté.
+- Synchro automatique 2x/jour à un horaire aléatoire hors des heures
+  ouvrées (7h-19h, Europe/Paris).
+- Réservé aux administrateurs Twenty, avec confirmation avant chaque
+  action manuelle et seuil de sécurité sur les synchros automatiques.
+- Historique des 50 dernières synchros avec détail des actions.
 
-- Feature one
-- Feature two
-- Feature three
+Le backend (service Node.js séparé, appelé par cette page) vit dans
+`/mnt/data/tempilo/apps/google-contacts-sync/app/` — voir son propre
+README pour la configuration (clés API, variables d'environnement).
 
 ## Getting started
 

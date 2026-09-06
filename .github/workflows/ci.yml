@@ -5,6 +5,10 @@ on:
     branches:
       - main
   pull_request: {}
+  # Permet de relancer la CI a la demande sans avoir a pousser un commit
+  # (ajoute le 06/09/2026 : les correctifs pousses le 28/08 n'avaient declenche
+  # aucun run, impossible de verifier qu'ils reparaient bien la CI).
+  workflow_dispatch: {}
 
 permissions:
   contents: read
